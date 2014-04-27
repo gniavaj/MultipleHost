@@ -36,5 +36,10 @@ HTTPSourceParser.prototype.getProtocol = function(){
     return res[1];
 };
 
+HTTPSourceParser.prototype.getURL = function(){
+
+    return this.source.split('\n')[0].split(' ')[1];
+};
+
 module.exports = HTTPSourceParser;
 

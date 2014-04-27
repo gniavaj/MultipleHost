@@ -46,6 +46,10 @@ ProxyServer.prototype.connection = function(serverSocket){
 
         var protocol =  httpSourceParser.getProtocol();
 
+        var url =  httpSourceParser.getURL();
+
+        console.log(url);
+
         var client = net.connect({
             port: port,
             host: host
