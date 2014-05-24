@@ -2,11 +2,20 @@
 var net = require('net');
 var dnsParser = require('./dnsParser');
 var HTTPSourceParser = require('./httpSourceParser');
-
-var ProxyServer = function(){
+var extend = require('extebd');
+/**
+ * @fileoverview 代理server
+ *
+ * @param {Object} options
+ * @param {Number} options.port 代理端口
+ * @param {String} options.hostsPath hosts文件路径
+ */
+var ProxyServer = function(options){
 
     this.hostMap = null;
     this.server = null;
+
+    this.options = extend({}, options);
 
     this.start();
 }
